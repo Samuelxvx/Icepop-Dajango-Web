@@ -1,0 +1,19 @@
+{% extends 'app_general/components/base.html' %}
+{% block site_title %}{{icepop.title}}{{ icepop_id }} {% endblock  %}
+
+{% block content %}
+        {% if icepop is not None %}
+        <div>
+            <h3>{{icepop.title}}</a></h3>
+            <p>{{ icepop.price | floatformat:'g'}} yen</p>
+            {% if icepop.is_premium %}
+                <p>**THIS IS LIMITED ICEPOP</p>
+            {% endif %}
+            <p>this promo will exit untill {{icepop.promo_end_at | date:'j N Y'}}</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi maiores, necessitatibus, mollitia cumque illo ipsa provident id sunt vel rerum cum dolorum, perspiciatis et eius repellendus? Asperiores eos numquam sint!</p>
+        </div>
+    {% else %}
+        <p>not found</p>
+    {% endif %}
+{% endblock  %}
+

@@ -1,0 +1,20 @@
+{% extends 'app_general/components/base.html' %}
+{% block site_title %}MENU{% endblock  %}
+{% block content %}
+    <div>
+        <h1> MENU ICEPOP </h1>
+        {% for icepop in icepops %}
+        <div>
+            <h3><a href="{% url 'icepop' icepop.id %}">{{icepop.title}}</a></h3>
+            <p>{{ icepop.price | floatformat:'g'}} yen</p>
+            {% if icepop.is_premium %}
+                <p>**THIS IS LIMITED ICEPOP</p>
+            {% endif %}
+            <p>this promo will exit untill {{icepop.promo_end_at | date:'j N Y'}}</p>
+        </div>
+        {% empty %}
+            <h5>items empty</h5>
+        {% endfor %}
+     </div>
+{% endblock  %}
+
