@@ -1,5 +1,16 @@
+
+{% load static %}
+
 <header>
-    <a href="{% url 'home' %}">HOME</a>
-    <a href="{% url 'icepops' %}">MENU</a>
-    <a href="{% url 'about' %}">ABOUT</a>
+    <nav class="navMenu">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'app_general/logo.png' %}" alt="logo">
+            </a>
+            <div>
+                <a href="{% url 'home' %}">HOME</a>
+                <a href="{% url 'icepops' %}">MENU</a>
+                <a href="{% url 'about' %}">ABOUT</a>
+                <div class="dot"></div>
+            </div>
+    </nav>
 </header>

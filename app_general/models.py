@@ -14,3 +14,7 @@ class Subscription(models.Model):
     status = models.CharField(max_length=15 , choices=STATUS, default='unapproved' )
     registered_at = models.DateTimeField(auto_now_add=True)
     icepop_set = models.ManyToManyField('app_icepops.Icepop')
+
+    
+    def __str__(self) -> str:
+        return '{} (id={})'.format(self.name, self.id)

@@ -1,9 +1,31 @@
 {% extends 'app_general/components/base.html' %}
+{% load static %}
 {% block site_title %}HOME PAGE{% endblock  %}
 {% block content %}
     <div>
         <h1> HOMEPAGE </h1>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta recusandae sequi explicabo voluptates aliquam quam iure voluptatem! Minima, natus eos porro magni minus quibusdam ea, obcaecati sapiente fuga, odio eligendi.</p>
     </div>
+    <section>
+        <h4>Infomation</h4>
+        <div>
+            <div>
+                <img src="{% static  'app_general/home-about-1.jpg' %}" alt="picture1">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quidem quibusdam numquam optio. Ipsam nesciunt dicta deleniti illo iusto facilis rerum voluptas reprehenderit veritatis, quas magnam! Reprehenderit reiciendis amet minus!</p>
+        </div>
+        <div>
+            <div>
+                <img src="{% static  'app_general/home-about-2.jpg' %}" alt="picture2">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quidem quibusdam numquam optio. Ipsam nesciunt dicta deleniti illo iusto facilis rerum voluptas reprehenderit veritatis, quas magnam! Reprehenderit reiciendis amet minus!</p>
+        </div>
+        <div>
+            <div>
+                <img src="{% static  'app_general/home-about-3.jpg' %}" alt="picture3">
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quidem quibusdam numquam optio. Ipsam nesciunt dicta deleniti illo iusto facilis rerum voluptas reprehenderit veritatis, quas magnam! Reprehenderit reiciendis amet minus!</p>
+        </div>
+    </section>
 {% endblock  %}
 

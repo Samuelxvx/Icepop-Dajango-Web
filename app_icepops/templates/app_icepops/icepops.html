@@ -1,12 +1,24 @@
 {% extends 'app_general/components/base.html' %}
+{% load static %}
 {% block site_title %}MENU{% endblock  %}
 {% block content %}
     <div>
         <h1> MENU ICEPOP </h1>
         {% for icepop in icepops %}
         <div>
+            <div>
+                <img src="{% static icepop.image_relative_url %}">
+            </div>     
             <h3><a href="{% url 'icepop' icepop.id %}">{{icepop.title}}</a></h3>
-            <p>{{ icepop.price | floatformat:'g'}} yen</p>
+            {% if icepop.special_price is not None %}
+                <p>
+                    <span>{{icepop.special_price | floatformat:'g'}} 円</span>
+                    <del>{{ icepop.price | floatformat:'g'}} 円</del>
+                </p>
+            {% else %}
+                <p>{{ icepop.price | floatformat:'g'}} 円</p>
+            {% endif %}
+
             {% if icepop.is_premium %}
                 <p>**THIS IS LIMITED ICEPOP</p>
             {% endif %}

@@ -1,0 +1,35 @@
+{% extends 'app_general/components/base.html' %}
+{% block site_title %}SUBSCRIPTION{% endblock  %}
+{% block content %}
+<form action="{% url 'subscription' %}" method="post">
+    <h2>Register for Promo</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elionsectetur ipsam?</p>
+    {% csrf_token %}
+    {{ form.non_field_errorsaaaaa}}
+    <div>
+        {{ form.name.label_tag }}
+        {{ form.name }}
+        {{ form.name.errors }}
+    </div>
+     <div>
+        {{ form.email.label_tag }}
+        {{ form.email }}
+        {{ form.email.errors }}
+     </div>
+     <div>
+        {{ form.icepop_set.label_tag }}
+        {{ form.icepop_set }}
+        {{ form.icepop_set.errors }}
+     </div>
+    <div>
+        <label> read the massages </label>
+        <label>{{ form.accepted }}{{ form.accepted.label_tag }}
+        </label>
+        {{ form.accepted.errors }}
+     </div>
+    <div>
+        <button type="subnmit">Submit</button>
+    </div>
+</form>
+{% endblock  %}
+
